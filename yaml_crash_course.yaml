@@ -1,0 +1,39 @@
+# the yamel file
+
+courses:
+  course_name: "Introduction to YAML"
+  version: 1.5
+  author: "Joe Smith"
+  price: &latestPrice 199 #NOTE - here this &latestPrice is a reference/variable
+  published: true
+  release_date: 2022-01-01 00:00:00
+  pre_enrollment: null
+  tags:
+    - "YAML"
+    - "YAML Tutorial"
+    - "YAML Course"
+  course_ta: ["Joe Smith", "Jane Doe", ""]
+  ta_detailes:
+    - name: "Joe Smith"
+      email: "joe@smith"
+      role: "content admin"
+    - name: "Jane Doe"
+      email: "jane@doe"
+      role: "disscussion admin"
+    - { name: "Joe Smith", email: "joe@smith", role: "content admin" }
+  short_description: >
+    This is a short description of the course,
+    Thie course is about YAML.
+  long_description: |
+    lorem ipsum dolor sit amet consectetur adipiscing elit
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore
+    magna aliqua.
+  processing_fee: *latestPrice #NOTE - here in this Processing_fee key we passing the value as *latestPrice which is a reference/variable
+  discount: null
+
+  advanced: &advanced #NOTE - here this &advanced is a reference/variable
+    mykey: myvalue
+
+  another_adv:
+    one: two
+    <<: *advanced #NOTE - here in this another_adv object we passing the value as *advanced which is a reference/variable inside the key one as a second value apart from the existed value
